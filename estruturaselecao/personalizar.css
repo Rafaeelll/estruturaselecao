@@ -1,0 +1,14 @@
+
+body{
+    width: 600px; /*largura*/
+    margin: auto; /*centralizado*/
+    background-color: skyblue;/*Cor do fundo da pagina*/
+    margin-top: 100px; /*espeçamento externo acima*/
+}
+
+div{
+    padding: 10px;
+}
+li{
+    padding: 5px;
+}

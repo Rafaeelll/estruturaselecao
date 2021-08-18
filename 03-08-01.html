@@ -1,0 +1,60 @@
+<DOCTYPE html>
+<html>
+    <head>
+        <title> Calculadora do IMC </title>
+        <meta charset="utf-8"/>
+
+        <style>
+            body{
+                width: 800px;
+                margin: auto;
+            }
+            header{
+                margin-top: 50px;
+            }
+            main {
+                margin-top: 20px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <header>
+            Calculadora do IMC
+        </header>
+        <main>
+            <label> informe seu peso </label>
+            <input type="number" id="peso"/>
+            <label> informe sua altura </label>
+            <input type="number" id="altura"/>
+            <button onClick="calcula()" type="button"> Calcular IMC </button>
+            <p id = "imc"> 
+                
+            </p>
+            </main>
+            <footer>
+                Desenvolvido por alunos do 2o. ciclo de ADS da Fatec Franca - agosto de 2021
+            </footer>
+            <script>
+            function calcula(){
+                let peso= document.getElementById("peso").value
+                let altura= document.getElementById("altura").value
+                //processamento
+                let imc = peso / (altura**2)
+                document.getElementById("imc").innerHTML = `O seu IMC é de ${imc.ToFixed(2)}`
+
+            }
+       </script>
+   </body>
+</html>
+
+
+
+
+
+
+                
+
+    
+
+
