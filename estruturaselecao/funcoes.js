@@ -46,5 +46,71 @@ function exe2(){
     // mostra resultados 
     document.getElementById("resultado").innerHTML = resultado
 
+}
+
+function exe3(){
+    let num1 = Number(document.getElementById("num1").value)
+    let num2 = Number(document.getElementById("num2").value)
+    //processamento
+
+    if (num1 < num2) {
+        document.getElementById("resultado").innerHTML = `O menor número é ${num1}`
+
+    }
+    else{
+        document.getElementById("resultado").innerHTML = `O menor número é ${num2}`
+
+    }
+
+}
+
+function exe4(){
+    let num1 = Number(document.getElementById("num1").value)
+    let num2 = Number(document.getElementById("num2").value)
+    //processamento
+
+    if (num1 > num2) {
+        document.getElementById("resultado").innerHTML = `O maior número é ${num1}`
+
+    }
+    else{
+        document.getElementById("resultado").innerHTML = `O maior número é ${num2}`
+
+    }
+
+}
+
+function exe5(){
+    let number1 = Number(document.getElementById("number1").value)
+    let number2 = Number(document.getElementById("number2").value)
+    let opcao = Number(document.getElementById("opcao").value)
+    //calculation
+
+    if (opcao==1){
+    media = (number1 + number2) / 2
+    document.getElementById("resultado").innerHTML = `A média é ${media}`
+
+    }
+    else if ((opcao ==2) && (number1>number2)){
+        diferenca = number1 - number2
+        document.getElementById("resultado").innerHTML = `A Diferença do maior pelo menor é ${diferenca}`
+
+    }
+    else if ((opcao ==2) && (number2>number1)){
+        diferenca = number2 - number1
+        document.getElementById("resultado").innerHTML = `A Diferença do maior pelo menor é ${diferenca}`
+    }
+    else if (opcao ==3){
+        produto = number1 * number2
+        document.getElementById("resultado").innerHTML = `O produto entre números digitados é ${produto}`
+        
+    }
+    else if (opcao==4){
+        divisao = number1 / number2
+        document.getElementById("resultado").innerHTML = `A Divisão do primeiro numero pelo segundo é ${divisao}`
+
+
+    }
+
 
 }
