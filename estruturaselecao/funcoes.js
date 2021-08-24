@@ -57,8 +57,13 @@ function exe3(){
         document.getElementById("resultado").innerHTML = `O menor número é ${num1}`
 
     }
-    else{
+    else if (num2< num1) {
         document.getElementById("resultado").innerHTML = `O menor número é ${num2}`
+
+    }
+    else {
+        document.getElementById("resultado").innerHTML = `Não existe numero menor`
+
 
     }
 
@@ -67,16 +72,27 @@ function exe3(){
 function exe4(){
     let num1 = Number(document.getElementById("num1").value)
     let num2 = Number(document.getElementById("num2").value)
-    //processamento
+    let num3 = Number(document.getElementById("num3").value)
 
-    if (num1 > num2) {
+    //processamento
+    if ((num1==num2) && (num2==num3)){
+        document.getElementById("resultado").innerHTML = `Todos números são iguais`
+
+    }
+
+    else if ((num1 > num2) && (num1 > num3)) {
         document.getElementById("resultado").innerHTML = `O maior número é ${num1}`
 
     }
-    else{
+    else if (num2> num3){
         document.getElementById("resultado").innerHTML = `O maior número é ${num2}`
 
     }
+    else {
+        document.getElementById("resultado").innerHTML = `O maior número é ${num3}`
+
+    } 
+    
 
 }
 
@@ -111,6 +127,43 @@ function exe5(){
 
 
     }
+    else{
+        document.getElementById("resultado").innerHTML = `Opção selecionada é invalida`
+
+    }
+
+}
+
+function exe5modo2(){
+    let number1 = Number(document.getElementById("number1").value)
+    let number2 = Number(document.getElementById("number2").value)
+    let opcao = Number(document.getElementById("opcao").value)
+    //process
+    let resultado
+    switch (opcao) {
+        case 1: resultado = (number1+number2) / 2
+            break
+        case 2: if (number1>=number2){
+                   resultado = number1 - number2
+                }
+                else {
+                    resultado= number2 - number1
+                }
+            break
+        case 3: resultado = (number1*number2)
+            break
+        case 4: if (number2 != 0){
+                    resultado = number1/number2
+
+                }
+                else {
+                    resultado = "Divisão por zero!"
+                }
+            break
+        default: resultado = "Opção Inválida"
+            
+    }
+    document.getElementById("resultado").innerHTML = resultado
 
 
 }

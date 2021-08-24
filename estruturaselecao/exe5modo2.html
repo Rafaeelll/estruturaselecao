@@ -13,31 +13,28 @@
 
         </header>
         <main>
+            
             <div>
                 <label for= "number1"> Digite a numero 1:</label> <!--rotulo-->
                 <input type= "number" id="number1"/> <!--caixa de texto-->
             </div>
+
             <div>
                 <label for= "number2"> Digite o numero 2:</label> <!--rotulo-->
                 <input type= "number" id="number2"/> <!--caixa de texto-->
             </div>
-            <div>
 
-                <label for= "opcao"> Escolha uma das opções abaixo: 
-                    <div>
-                    1-Media entre os números digitados; 
-                    <div></div>
-                    2-Diferença do maior pelo menor;
-                    <div></div> 
-                    3-produto entre números digitados;
-                    <div></div> 
-                    4-Divisão do primeiro pelo segundo; </label> <!--rotulo-->
-                    </div>
-                <input type= "number" id="opcao"/> <!--caixa de texto-->
+            <div> 
+                <select id ="opcao">
+                    <option value="1"> 1.Media entre os números digitado </option>
+                    <option value="2"> 2.Diferença do maior pelo menor </option>
+                    <option value="3"> 3.Produto entre números digitados </option>
+                    <option value="4"> 4.Divisão do primeiro pelo segundo </option>
+                </select>
             </div>
-            <div>
-                
-                <button type="button" onclick="exe5()"> Calcular </button>
+
+            <div>    
+                <button type="button" onclick="exe5modo2()"> Calcular </button>
             </div>
 
             <div id="resultado">
