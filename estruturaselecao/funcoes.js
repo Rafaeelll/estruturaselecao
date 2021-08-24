@@ -167,3 +167,28 @@ function exe5modo2(){
 
 
 }
+function exe6() {
+    let number1 = Number(document.getElementById("number1").value)
+    let number2 = Number(document.getElementById("number2").value)
+    let opcao = Number(document.getElementById("opcao").value)
+    //process
+    let resultado
+    switch (opcao) {
+        case 1: 
+        document.getElementById("resultado").innerHTML = `O valor é  ${Math.pow(number1, number2)}`
+            break
+
+        case 2:
+            document.getElementById("resultado").innerHTML = `O valor é  ${Math.sqrt(number1)} e ${Math.sqrt(number2)}`    
+            break
+
+        case 3:
+            document.getElementById("resultado").innerHTML = `O valor é  ${Math.cqrt(number1)} e ${Math.cqrt(number2)}`
+            break
+
+        default: resultado = "Valor Inválido"
+            
+    }
+    document.getElementById("resultado").innerHTML = resultado
+
+}
