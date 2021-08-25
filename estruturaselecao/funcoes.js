@@ -204,3 +204,82 @@ function exe7(){
     document.getElementById("resultado").innerHTML = `Aumento ${aumento} e salário reajustado: ${sal + aumento}`
     }
 } 
+
+function exe8(){
+    // entrada de dados
+    let salr = Number(document.getElementById("salr").value)
+    let aumento = 0
+
+   if ((salr >=1) && (salr<=300)){
+       aumento = (salr * 35) / 100
+       document.getElementById("resultado").innerHTML = `Aumento ${aumento} e salário reajustado: ${salr + aumento}`
+
+    }
+
+    else if (salr > 300) {
+        aumento = (salr * 15) / 100
+        document.getElementById("resultado").innerHTML = `Aumento ${aumento} e salário reajustado: ${salr + aumento}`
+
+    }
+
+    else {
+        document.getElementById("resultado").innerHTML = `Não houve aumento`
+
+    }
+} 
+
+function exe9(){
+    let saldo_m = Number(document.getElementById("saldo_m").value)
+    valor_c = 0
+    if (saldo_m > 400){
+        valor_c = (saldo_m * 30) / 100
+        document.getElementById("resultado").innerHTML = `O valor do credito é: ${saldo_m + valor_c}`
+
+    }
+    else if ((saldo_m <= 400) && (saldo_m >= 300)){
+        valor_c = (saldo_m * 25) / 100
+        document.getElementById("resultado").innerHTML = `O valor do credito é: ${saldo_m + valor_c}`
+
+    }
+
+    else if ((saldo_m <= 300) && (saldo_m >= 200)){
+        valor_c = (saldo_m * 20) / 100
+        document.getElementById("resultado").innerHTML = `O valor do credito é: ${saldo_m + valor_c}`
+
+    }
+    else if ((saldo_m > 0) && (saldo_m <= 200)){
+        valor_c = (saldo_m * 10) / 100
+        document.getElementById("resultado").innerHTML = `O valor do credito é: ${saldo_m + valor_c}`
+
+    }
+    else {
+        document.getElementById("resultado").innerHTML = `O valor do credito é inválido`
+
+    }
+}
+
+function exe10(){
+    let custo_f = Number(document.getElementById("custo_f").value)
+    porc_d = 0
+    preco_c = 0
+
+    if ((custo_f > 0) && (custo_f <= 12000)){
+        porc_d = (custo_f * 0.05) 
+        document.getElementById("resultado").innerHTML = `O Preço do consumidor é: ${custo_f + porc_d}`
+    }
+    else if ((custo_f >= 12000) && (custo_f <= 25000)){
+        preco_c = (custo_f * 0.10) + (custo_f * 0.15)
+        document.getElementById("resultado").innerHTML = `O Preço do consumidor é: ${custo_f + preco_c}`
+    }
+    else if (custo_f > 25000){
+        preco_c = (custo_f * 0.15) + (custo_f * 0.20)
+        document.getElementById("resultado").innerHTML = `O Preço do consumidor é: ${custo_f + preco_c}`
+    }
+    else {
+        document.getElementById("resultado").innerHTML = `O valor do preço do consumidor é inválido`
+
+
+    }
+    
+
+}
