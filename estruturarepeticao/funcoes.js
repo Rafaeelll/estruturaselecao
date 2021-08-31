@@ -44,5 +44,66 @@ while(contador<=8){
 alert(`Faixa 1: ${soma} Faixa 2: ${soma1} Faixa 3: ${soma2} Faixa 4: ${soma3} Faixa 5: ${soma4}`) 
 alert(`Percentual Faixa 1: ${soma/8*100} Faixa 5: ${soma4/8*100}`)
 
+}
+function exe6(){
+  contador = 1
+  let valor
+  soma_v = 0
+  soma_p = 0
+  let codigo
 
+  while(contador<=15){
+    valor = Number(prompt(`Informe o valor total do produto ${contador}:`))
+    //converter para maiusculo
+    codigo = prompt("Informe V para compra à vista e P para compra à prazo").toUpperCase()
+    switch(codigo){
+            case 'V': soma_v += valor
+                        break
+            case 'P': soma_p += valor
+                        break
+            default: alert(`Forma de pagamento inválido`)
+        }
+
+    contador++
+  }
+  alert(`Total à vista ${soma_v.toFixed(2)} Total à prazo ${soma_p.toFixed(2)} Total geral ${(soma_v+soma_p).toFixed(2)}`)
+  alert(`Primeira parcela do valor total à prazo ${(soma_p/3).toFixed(2)}`)
+
+}
+function exe23(){
+    let opcao
+    do{
+        opcao = Number(prompt("Digite \n1.Novo salário \n2.férias \n3.Décimo terceiro \n4.Sair"))
+        switch(opcao){
+            case 1: let salario = Number(prompt("Informe o salário"))
+                    let novosalario
+                    if (salario<210){
+                        novosalario = salario + (15*salario)/100
+                        
+                    }
+                    else if (salario <= 600) {
+                        novosalario = salario + (10*salario)/100
+                    }
+                    else{
+                        novosalario = salario + (5*salario)/100
+
+                    }
+                    alert(`O novo salario é de ${novosalario}`)
+                    break
+            case 2: let salario = Number(prompt("Informe o salário"))
+                    alert(`As férias serão ${salario+salario/3}`)
+                    break
+
+            case 3: let salario = Number(prompt("Informe o salário"))
+                    let meses = Number(prompt(`Informe quantos meses foram trabalhados`))
+                        alert(`Décimo terceiro ${salario * meses/12}`)
+                    break
+            case 4: alert(`O programa será encerrado`)
+                    break
+            default: alert("Opção inválida")
+
+        }
+
+    }
+    while (opcao !=4)
 }
