@@ -283,3 +283,33 @@ function exe10(){
     
 
 }
+
+function exe11(){
+    let salr_a = Number(document.getElementById("salr_a").value)
+    per_aum = 0
+    per_aum2 = 0
+    per_aum3 = 0
+
+    if ((salr_a > 0) && (salr_a <= 300)) {
+        per_aum = (salr_a * 0.15)
+        document.getElementById("resultado").innerHTML = `O valor do aumento ${per_aum}, e o novo salario é ${salr_a + per_aum}`
+
+    }
+    else if ((salr_a >= 300) && (salr_a <= 600)) {
+        per_aum2 = (salr_a * 0.10)
+        document.getElementById("resultado").innerHTML = `O valor do aumento ${per_aum2}, e o novo salario é ${salr_a + per_aum2}`   
+    }
+    else if ((salr_a >= 600) && (salr_a <= 900)) {
+        per_aum3 = (salr_a * 0.10)
+        document.getElementById("resultado").innerHTML = `O valor do aumento ${per_aum3}, e o novo salario é ${salr_a + per_aum3}`   
+    }
+    else if (salr_a > 900) {
+        document.getElementById("resultado").innerHTML = `O valor do aumento é = 0, e o novo salario é ${salr_a}`   
+    }
+    else {
+        document.getElementById("resultado").innerHTML = `Salário não definido!`   
+
+    }
+
+
+}
