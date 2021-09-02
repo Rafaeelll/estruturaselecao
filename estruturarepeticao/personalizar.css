@@ -1,14 +1,20 @@
-
-body{
-    width: 600px; /*largura*/
-    margin: auto; /*centralizado*/
-    background-color: skyblue;/*Cor do fundo da pagina*/
-    margin-top: 100px; /*espeçamento externo acima*/
+body {
+    width: 60%; /* largura */
+    margin: auto; /* centralizado */
+    background-color: skyblue;
+    margin-top: 100px; /* espaçamento externo acima */
 }
 
 div{
     padding: 10px;
 }
-li{
+
+li {
     padding: 5px;
+}
+
+main {
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
 }

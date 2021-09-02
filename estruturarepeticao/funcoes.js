@@ -1,7 +1,7 @@
-function exe0() {
+function exe0(){
     let contador = 1
     let soma = 0
-    let preco
+    let preco 
 
 while(contador<=10){
     preco = Number(prompt(`Informe o preço do produto ${contador}:`))
@@ -78,25 +78,24 @@ function exe23(){
             case 1: let salario = Number(prompt("Informe o salário"))
                     let novosalario
                     if (salario<210){
-                        novosalario = salario + (15*salario)/100
+                        novosalario = salario + (15 * salario) /100
                         
                     }
                     else if (salario <= 600) {
-                        novosalario = salario + (10*salario)/100
+                        novosalario = salario + (10 * salario) /100
                     }
                     else{
-                        novosalario = salario + (5*salario)/100
+                        novosalario = salario + (5 * salario) /100
 
                     }
                     alert(`O novo salario é de ${novosalario}`)
                     break
-            case 2: let salario = Number(prompt("Informe o salário"))
-                    alert(`As férias serão ${salario+salario/3}`)
+            case 2: salario = Number(prompt("Informe o salário"))
+                    alert(`As férias serão ${salario + salario/3}`)
                     break
-
-            case 3: let salario = Number(prompt("Informe o salário"))
+            case 3: salario = Number(prompt("Informe o salário"))
                     let meses = Number(prompt(`Informe quantos meses foram trabalhados`))
-                        alert(`Décimo terceiro ${salario * meses/12}`)
+                        alert(`Décimo terceiro ${(salario * meses) / 12}`)
                     break
             case 4: alert(`O programa será encerrado`)
                     break
