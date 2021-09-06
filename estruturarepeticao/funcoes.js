@@ -106,3 +106,123 @@ function exe23(){
     }
     while (opcao !=4)
 }
+function exe4(){
+    let opcao
+    let saida = 0
+    let saida1 = 0
+    let saida2 = 0
+    let saida3 = 0
+    let saida5 = 0
+    let saida6 = 0
+    let saida7 = 0
+    let saida8 = 0
+    let saida9 = 0
+    let saida10 = 0
+    do{
+        opcao = Number(prompt("Digite uma das opções abaixo: \n1.Nova multiplicação \n2.Sair"))
+        switch(opcao){
+            case 1: let num = Number(prompt("Informe o número: "))
+
+                    saida = num * 0
+                    saida1 = num * 1
+                    saida2 = num * 2
+                    saida3 = num * 3
+                    saida4 = num * 4
+                    saida5 = num * 5
+                    saida6 = num * 6
+                    saida7 = num * 7
+                    saida8 = num * 8
+                    saida9 = num * 9
+                    saida10 = num * 10
+                    alert(`O resultado da tabuada é: \n${saida} \n${saida1} \n${saida2} \n${saida3} \n${saida4} \n${saida5} \n${saida6} \n${saida7} \n${saida8} \n${saida9} \n${saida10}`)
+                    break
+            case 2: alert(`O programa será encerrado`)
+                    break
+            default: alert("Opção inválida")
+
+        }
+    }
+    while(opcao!=2)
+}
+
+function exe5(){
+    let opcao
+    let saida = 0
+    let saida1 = 0
+    let saida2 = 0
+    let saida3 = 0
+    let saida5 = 0
+    let saida6 = 0
+    let saida7 = 0
+    let saida8 = 0
+    let saida9 = 0
+    let saida10 = 0
+    do{
+        opcao = Number(prompt("Digite as opções abaixo: \n1.Nova multiplicação \n2.Sair"))
+        switch(opcao){
+            case 1: let num = Number(prompt("Informe o número: "))
+                    if(num<=10){
+                        saida = num * 0
+                        saida1 = num * 1
+                        saida2 = num * 2
+                        saida3 = num * 3
+                        saida4 = num * 4
+                        saida5 = num * 5
+                        saida6 = num * 6
+                        saida7 = num * 7
+                        saida8 = num * 8
+                        saida9 = num * 9
+                        saida10 = num * 10
+                        alert(`O resultado da tabuada é: \n${saida} \n${saida1} \n${saida2} \n${saida3} \n${saida4} \n${saida5} \n${saida6} \n${saida7} \n${saida8} \n${saida9} \n${saida10}`)
+
+                    }
+
+                    else{
+                        alert ("Digite outro numero! \nTabuada somente de 1 ate 10.")
+                    }
+                    break
+            case 2: alert(`O programa será encerrado`)
+                    break
+            default: alert("Opção inválida")
+
+        }
+    }
+    while(opcao!=2)
+}
+function exe7(){
+    let contador = 1
+    let somap = 0
+    let somaalt = 0
+    let soma50 = 0
+    let media = 0
+    let porc = 0
+    let soma10_20 =0
+    let somap40 =0
+    let alt
+    let idade 
+    let peso
+    while (contador<=5) {
+        idade = Number(prompt(`Informe a idade ${contador}:`))
+        alt = Number(prompt(`Informe a altura  ${contador}:`))
+        peso = Number(prompt(`Informe o peso ${contador}:`))
+
+        if (idade>50){
+            soma50++
+        
+        }
+        else if ((idade >=10) && (idade<=20)){
+            soma10_20++
+            media =  soma10_20 / alt
+      
+        }
+        else if(peso<40){
+            somap40++
+            porc = (somap40 / peso) * 100
+        
+        }
+        contador++
+    }
+alert(`A quantidade de pessoas com idade superior a 50 anos: ${soma50} \nMédia da altura das pessoas entre 10 e 20 anos: ${media} \nPorcentagem de pessoas com peso inferior a 40Kg: ${porc}`)
+
+
+}
