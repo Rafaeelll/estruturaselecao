@@ -48,8 +48,8 @@ alert(`Percentual Faixa 1: ${soma/8*100} Faixa 5: ${soma4/8*100}`)
 function exe6(){
   contador = 1
   let valor
-  soma_v = 0
-  soma_p = 0
+  let soma_v = 0
+  let soma_p = 0
   let codigo
 
   while(contador<=15){
@@ -134,7 +134,8 @@ function exe4(){
                     saida8 = num * 8
                     saida9 = num * 9
                     saida10 = num * 10
-                    alert(`O resultado da tabuada é: \n${saida} \n${saida1} \n${saida2} \n${saida3} \n${saida4} \n${saida5} \n${saida6} \n${saida7} \n${saida8} \n${saida9} \n${saida10}`)
+                    alert(`O resultado da tabuada é: \n${saida} \n${saida1} \n${saida2} \n${saida3} \n${saida4} \n${saida5} 
+                    \n${saida6} \n${saida7} \n${saida8} \n${saida9} \n${saida10}`)
                     break
             case 2: alert(`O programa será encerrado`)
                     break
@@ -158,7 +159,7 @@ function exe5(){
     let saida9 = 0
     let saida10 = 0
     do{
-        opcao = Number(prompt("Digite as opções abaixo: \n1.Nova multiplicação \n2.Sair"))
+        opcao = Number(prompt("Digite uma das opções abaixo: \n1.Nova multiplicação \n2.Sair"))
         switch(opcao){
             case 1: let num = Number(prompt("Informe o número: "))
                     if(num<=10){
@@ -173,7 +174,8 @@ function exe5(){
                         saida8 = num * 8
                         saida9 = num * 9
                         saida10 = num * 10
-                        alert(`O resultado da tabuada é: \n${saida} \n${saida1} \n${saida2} \n${saida3} \n${saida4} \n${saida5} \n${saida6} \n${saida7} \n${saida8} \n${saida9} \n${saida10}`)
+                        alert(`O resultado da tabuada é: \n${saida} \n${saida1} \n${saida2} \n${saida3} \n${saida4} \n${saida5}
+                        \n${saida6} \n${saida7} \n${saida8} \n${saida9} \n${saida10}`)
 
                     }
 
@@ -191,38 +193,262 @@ function exe5(){
 }
 function exe7(){
     let contador = 1
-    let somap = 0
     let somaalt = 0
     let soma50 = 0
-    let media = 0
-    let porc = 0
-    let soma10_20 =0
-    let somap40 =0
+    let soma10_20 = 0
+    let somap40 = 0
+    let porce40 = 0
     let alt
     let idade 
     let peso
-    while (contador<=5) {
+    while (contador <= 5) {
         idade = Number(prompt(`Informe a idade ${contador}:`))
-        alt = Number(prompt(`Informe a altura  ${contador}:`))
+        alt = Number(prompt(`Informe a altura ${contador}:`))
         peso = Number(prompt(`Informe o peso ${contador}:`))
+
+        if (idade>0){
+            alert(`A idade ${contador}: ${idade} anos`)
+            
+        }
+        else {
+            alert("Idade inválida!")
+        }
+        if (alt>0){
+            alert(`A altura ${contador}: ${alt}`)
+        }
+        else{
+            alert("Altura inválido!")
+        }
+        if (peso>0){
+            alert(`O peso ${contador}: ${peso} Kg`)
+        }
+        else{
+            alert("Peso inválida!")
+        }
 
         if (idade>50){
             soma50++
         
         }
-        else if ((idade >=10) && (idade<=20)){
+        else if ((idade >= 10) && (idade <= 20)){
             soma10_20++
-            media =  soma10_20 / alt
-      
-        }
-        else if(peso<40){
-            somap40++
-            porc = (somap40 / peso) * 100
+            somaalt = somaalt + alt
         
         }
+        if(peso < 40){
+            somap40++ 
+            porce40 = somap40 / 5 * 100
+        }
+        else{
+           porce40 = 0 
+        }
+        
         contador++
     }
-alert(`A quantidade de pessoas com idade superior a 50 anos: ${soma50} \nMédia da altura das pessoas entre 10 e 20 anos: ${media} \nPorcentagem de pessoas com peso inferior a 40Kg: ${porc}`)
+alert(`A quantidade de pessoas com idade superior a 50 anos: ${soma50} \nMédia da altura das pessoas entre 10 e 20 anos: ${somaalt/soma10_20}`)
+alert(`Porcentagem de pessoas com peso inferior a 40Kg: ${porce40}`)
+}
+function exe8(){
+    let contador = 1
+    let soma_olh_az = 0
+    let soma50_60 = 0
+    let media_h_150 = 0
+    let quant_h_150 = 0
+    let quant_cr_cab_r = 0
+    let somam40 = 0
+    let porc40 = 0.0
+    let porc_olh_a = 0.0
+    let height
+    let haircolor
+    let eyecolor
+    let age
+    let weight
+  
+    while(contador<=6){
+      age = Number(prompt(`Informe a idade ${contador}:`))
+      weight = Number(prompt(`Informe o peso ${contador}:`))
+      height = Number(prompt(`Informe a altura ${contador}:`)) 
+      //converter para maiusculo
+      eyecolor = prompt("Informe a cor dos olhos: \nA - para cor de olhos azuis \nP - para cor de olhos pretos \nV - para cor de olhos verdes \nC - para cor de olhos castanhos").toUpperCase()
+      haircolor = prompt("Informe a cor do cabelo: \nCP - para cor de cabelo preto \nCC - para cor de cabelo castanho \nL - para cor de cabelo louro \nR - para cor de cabelo ruivo").toUpperCase()
+      switch((eyecolor) && (haircolor)){
+              case 'A': eyecolor
+                          break
+              case 'P': eyecolor
+                          break
+              case 'V': eyecolor
+                          break
+              case 'C': eyecolor
+                          break
+              case 'CP':haircolor
+                          break
+              case 'CC':haircolor
+                          break
+              case 'L': haircolor
+                          break
+              case 'R': haircolor
+                          break          
+              default: alert(`Nenhuma das opções são válidas`)
+      
+          if ((age > 50) && (height < 1.50)){
+              soma50_60++
+          }
 
+          if (height < 1.50){
+              quant_h_150++
+              media_h_150 = (media_h_150 + age) / quant_h_150
+          }
+
+          if (eyecolor == `A`){
+              soma_olh_az++
+              porc_olh_a = soma_olh_az / 6 * 100
+          }
+           
+          if ((eyecolor != `A`) && (haircolor == `R`)){
+              quant_cr_cab_r++
+          }
+
+          if (weight < 40){
+              somam40++
+              porc40 = somam40 / 6 * 100
+          }
+      }    
+      contador++
+    }
+
+alert(`A quantidade de pessoas com idade superior a 50 anos e altura inferior a 1.50: ${soma50_60} 
+    \nMédia das idades das pessoas com altura inferior a 1.50 m: ${media_h_150} 
+    \nQuantidade de pessoas ruivas que não possuem olhos azuis: ${quant_cr_cab_r}`)
+alert(`Porcentagem de pessoas com peso inferior a 40Kg: ${porc40} 
+    \nPorcentagem de pessoas com olhos azuis: ${porc_olh_a}`)
+
+  }
+function exe9(){
+    let cont = 1
+    let mediaidade = 0
+    let soma = 0
+    let quant90 = 0
+    let quant10_30 = 0
+    let porc = 0
+    let quant190 = 0
+    let peso
+    let alt
+    let idades
+    while (cont <= 10) {
+        idades = Number(prompt(`Informe a idade ${cont}:`))
+        peso = Number(prompt(`Informe o peso ${cont}:`))
+        alt = weight = Number(prompt(`Informe a altura ${cont}:`))
+
+        if(idades > 0){
+            soma++
+            mediaidade = mediaidade + idades
+        }
+        else{
+            alert(`Idade inválida`)
+        }
+        if((peso > 90) && (alt < 1.50)){
+            quant90++
+        }
+
+        if (alt > 1.90){
+            quant190++
+        }
+        if ((idades >= 10) && (idades <= 30)){
+            quant10_30++
+            porc = quant10_30 / quant190 * 100
+        }
+      cont++  
+    }
+    alert(`A Média da idade das dez pessoas: ${mediaidade/soma}
+    \nA quantidade de pessoas com peso superior a 90kg e altura inferior a 1,50 m: ${quant90}
+    \nA porcentagem de pessoas com idade entre 10 e 30 anos entre as pessoas que medem mais de 1,90: ${porc}`)
+   
+}
+function exe1(){
+    let a
+    let b 
+    let c
+    let d
+    let aux = 0
+    for(let cont2=1;cont2<=5;cont2++){
+        console.log(cont2)
+        a = Number(prompt(`Informe o valor de A:`))
+        b = Number(prompt(`Informe o valor de B:`))
+        c = Number(prompt(`Informe o valor de C:`))
+        d = Number(prompt(`Informe o valor de D:`))
+    for(let cont=1;cont<=3;cont++){
+        console.log(cont)
+        if (a > b){
+            aux = a
+            a = b
+            b = aux
+        }
+        if(b > c){
+            aux = b
+            b = c
+            c = aux
+        }
+        if(c > d){
+            aux = c
+            c = d
+            d = aux
+        }
+
+    }
+    alert(`Ordem Crescente ${a} ${b} ${c} ${d}`)
+    alert(`Ordem Decrescente ${d} ${c} ${b} ${a}`)
+
+    }
 
 }
+function exe2(){
+    let quant = 120
+    let lucro  
+    let saida = ""
+    let maiorlucro = 0
+    let maiorquant = 0
+    let maiorpreco = 0
+
+
+    for(let preco=5.0; preco>= 1.0; preco = preco - 0.50){
+        lucro = (preco*quant) - 200
+        saida = saida + (`Preço: R$ ${preco} Quantidade: ${quant} despesas: R$ 200,00 lucro:R$ ${lucro}`) + "\n"
+        quant = quant + 26 //preparar para o proximo calculo
+        if (lucro > maiorlucro){
+            maiorlucro = lucro
+            maiorpreco = preco
+            maiorquant = quant
+        }
+        alert(saida)
+        alert(`Maior lucro: R$ ${maiorlucro} Maior qtde: ${maiorquant} Maior preço R$ ${maiorpreco}`)
+    }
+}
+
+function exe21(){
+    let totalv = 0
+    let Candi1 = 0; let Candi2 = 0; let Cand3 = 0; let Candi4 = 0; let soman = 0; let somab = 0
+    let opcao
+    do{
+        opcao = Number(prompt("Informe: \n1.Votar no Candi1 \n2.Votar no Candi2 \n3.Votar no Candi3 \n4.Votar noCandi4 \n5.Votar nulo \n6.Votar em branco \n0. Sair"))
+        switch(opcao){
+            case 1: Candi1++;  break
+            case 2: Candi2++; break
+            case 3: Cand3++;  break
+            case 4: Candi4++; break
+            case 5: soman++;  break
+            case 6: somab++;  break
+            case 0: alert(`Encerrando as votações`); break
+            default: alert("Opção inválida")
+
+        }
+
+    }
+    while(opcao!=0)
+    totalv = Candi1 + Candi2+ Cand3+ Candi4 + soman + somab
+    alert(`Candi1: ${Candi1} \nCandi2: ${Candi2} \nCandi3: ${Cand3} \nCandi4: ${Candi4} \nBranco: ${somab} \nNulo: ${soman}`)
+    alert(`% Branco: ${somab/totalv*100} \n% Nulo: ${soman/totalv*100}`)
+
+}
+
+
+    
