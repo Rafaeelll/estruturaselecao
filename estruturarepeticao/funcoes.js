@@ -320,10 +320,10 @@ alert(`Porcentagem de pessoas com peso inferior a 40Kg: ${porc40}
 function exe9(){
     let cont = 1
     let mediaidade = 0
-    let soma = 0
     let quant90 = 0
     let quant10_30 = 0
     let porc = 0
+    let soma = 0
     let quant190 = 0
     let peso
     let alt
@@ -485,6 +485,28 @@ alert(`A quantidade de pessoas que responderam sim: ${opcao_s}
     \nA quantidade de pessoas que responderam não: ${opcao_n} 
     \nQuantidade de mulheres que responderam sim: ${quan_f_s}`)
 alert(`Porcentagem de homens que responderam não, entre todos os homens: ${porc_h}%`)
+
+}
+
+function exe10(){
+    let cont = 1
+    let num
+    let somapares = 0
+    let somaimp = 0
+    while(cont<=10) {
+        num = Number(prompt(`Digite o numero ${cont}:`))
+        if(num % 2 == 0){
+            somapares = somapares + num
+            alert(`O número digitado é par`)
+        }
+        if (num % 2 != 0){
+            somaimp = somaimp + num
+            alert(`O número digitado é impar`)
+        }
+
+      cont++ 
+    }
+    alert(`A soma dos números pares é: ${somapares} \nA soma dos números impares é: ${somaimp}`)
 
 }
 
