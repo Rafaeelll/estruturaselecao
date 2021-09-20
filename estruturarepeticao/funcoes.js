@@ -256,8 +256,8 @@ function exe8(){
     let quant_h_150 = 0
     let quant_cr_cab_r = 0
     let somam40 = 0
-    let porc40 = 0.0
-    let porc_olh_a = 0.0
+    let porc40 = 0
+    let porc_olh_a = 0
     let height
     let haircolor
     let eyecolor
@@ -270,37 +270,31 @@ function exe8(){
       height = Number(prompt(`Informe a altura ${contador}:`)) 
       //converter para maiusculo
       eyecolor = prompt("Informe a cor dos olhos: \nA - para cor de olhos azuis \nP - para cor de olhos pretos \nV - para cor de olhos verdes \nC - para cor de olhos castanhos").toUpperCase()
+      switch(eyecolor){
+          case'A': soma_olh_az++; break
+          case'P': eyecolor; break
+          case'V': eyecolor; break
+          case'C': eyecolor; break  
+          default: alert(`Nenhuma das opções são válidas`)
+       }
       haircolor = prompt("Informe a cor do cabelo: \nCP - para cor de cabelo preto \nCC - para cor de cabelo castanho \nL - para cor de cabelo louro \nR - para cor de cabelo ruivo").toUpperCase()
-      switch((eyecolor) && (haircolor)){
-              case 'A': eyecolor
-                          break
-              case 'P': eyecolor
-                          break
-              case 'V': eyecolor
-                          break
-              case 'C': eyecolor
-                          break
-              case 'CP':haircolor
-                          break
-              case 'CC':haircolor
-                          break
-              case 'L': haircolor
-                          break
-              case 'R': haircolor
-                          break          
-              default: alert(`Nenhuma das opções são válidas`)
-      
+      switch(haircolor){
+          case'CP': haircolor; break
+          case'CC': haircolor; break
+          case'L': haircolor; break
+          case'R': haircolor; break
+          default: alert(`Nenhuma das opções são válidas`)
+      }
           if ((age > 50) && (height < 1.50)){
               soma50_60++
           }
 
           if (height < 1.50){
               quant_h_150++
-              media_h_150 = (media_h_150 + age) / quant_h_150
+              media_h_150 = media_h_150 + age
           }
 
           if (eyecolor == `A`){
-              soma_olh_az++
               porc_olh_a = soma_olh_az / 6 * 100
           }
            
@@ -312,12 +306,12 @@ function exe8(){
               somam40++
               porc40 = somam40 / 6 * 100
           }
-      }    
+          
       contador++
     }
 
 alert(`A quantidade de pessoas com idade superior a 50 anos e altura inferior a 1.50: ${soma50_60} 
-    \nMédia das idades das pessoas com altura inferior a 1.50 m: ${media_h_150} 
+    \nMédia das idades das pessoas com altura inferior a 1.50 m: ${media_h_150/quant_h_150} 
     \nQuantidade de pessoas ruivas que não possuem olhos azuis: ${quant_cr_cab_r}`)
 alert(`Porcentagem de pessoas com peso inferior a 40Kg: ${porc40} 
     \nPorcentagem de pessoas com olhos azuis: ${porc_olh_a}`)
@@ -337,7 +331,7 @@ function exe9(){
     while (cont <= 10) {
         idades = Number(prompt(`Informe a idade ${cont}:`))
         peso = Number(prompt(`Informe o peso ${cont}:`))
-        alt = weight = Number(prompt(`Informe a altura ${cont}:`))
+        alt = Number(prompt(`Informe a altura ${cont}:`))
 
         if(idades > 0){
             soma++
@@ -447,6 +441,50 @@ function exe21(){
     totalv = Candi1 + Candi2+ Cand3+ Candi4 + soman + somab
     alert(`Candi1: ${Candi1} \nCandi2: ${Candi2} \nCandi3: ${Cand3} \nCandi4: ${Candi4} \nBranco: ${somab} \nNulo: ${soman}`)
     alert(`% Branco: ${somab/totalv*100} \n% Nulo: ${soman/totalv*100}`)
+
+}
+function exe15(){
+
+    let sexo 
+    let cont = 1
+    let soma_m = 0
+    let soma_f = 0
+    let porc_h = 0
+    let quan_f_s = 0
+    let quan_h_n = 0
+    let opcao
+    let opcao_s = 0; let opcao_n = 0;
+
+while(cont<=10){
+    sexo = prompt("Informe o genêro: \nF-Feminino \nM-Masculino").toUpperCase()
+    switch(sexo){
+        case 'F': soma_f++; break
+        case 'M': soma_m++; break
+        default: alert(`Nenhuma das opções são válidas`)
+
+    }
+    opcao = prompt("Digite a resposta da pessoa entrevistada:\nS-Sim \nN-Não").toUpperCase()
+    switch(opcao){
+        case 'S': opcao_s++; break
+        case 'N': opcao_n++; break
+        default: alert(`Nenhuma das opções são válidas`)
+    }
+    if ((sexo == `F`) && (opcao == `S`)){
+        quan_f_s++
+
+    }
+    if((sexo == `M`) && (opcao == `N`)){
+        quan_h_n++
+        porc_h = quan_h_n  / soma_m * 100
+
+    }
+
+  cont++
+}
+alert(`A quantidade de pessoas que responderam sim: ${opcao_s} 
+    \nA quantidade de pessoas que responderam não: ${opcao_n} 
+    \nQuantidade de mulheres que responderam sim: ${quan_f_s}`)
+alert(`Porcentagem de homens que responderam não, entre todos os homens: ${porc_h}%`)
 
 }
 
