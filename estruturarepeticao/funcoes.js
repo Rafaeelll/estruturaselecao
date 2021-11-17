@@ -112,6 +112,7 @@ function exe4(){
     let saida1 = 0
     let saida2 = 0
     let saida3 = 0
+    let saida4 = 0
     let saida5 = 0
     let saida6 = 0
     let saida7 = 0
@@ -152,6 +153,7 @@ function exe5(){
     let saida1 = 0
     let saida2 = 0
     let saida3 = 0
+    let saida4 = 0
     let saida5 = 0
     let saida6 = 0
     let saida7 = 0
@@ -509,6 +511,251 @@ function exe10(){
     alert(`A soma dos números pares é: ${somapares} \nA soma dos números impares é: ${somaimp}`)
 
 }
+function exe11(){
+
+    let vlor
+    let vlorTotal = 0
+    let desc = 0
+    let parce
+    let vlorpar = 0
+
+        vlor = Number(prompt(`Digite o valor do carro: `))
+        parce = Number(prompt(`Digite a quantidades de parcelas: \n0-Para compra à vista \n6 Parcelas \n12 Parcelas \n18 Parcelas \n24 Parcelas \n30 Parcelas \n36 Parcelas \n42 Parcelas \n48 Parcelas \n54 Parcelas \n60 Parcelas`))
+        switch(parce){
+            case 0: parce; break
+            case 6: parce; break
+            case 12: parce; break
+            case 18: parce; break
+            case 24: parce; break
+            case 30: parce; break
+            case 36: parce; break
+            case 42: parce; break
+            case 48: parce; break
+            case 54: parce; break
+            case 60: parce; break
+            default: alert("Quantidade de parcelas digitada é inválida")
+        }
+        if (parce == 0){
+            vlorpar = 0
+            desc = vlor * 0.20
+        }
+        if (parce == 6){
+            vlorpar = vlor * 0.03
+        }
+        if (parce == 12){
+            vlorpar = vlor * 0.06
+        }
+        if (parce == 18){
+            vlorpar = vlor * 0.09
+        }
+        if (parce == 24){
+            vlorpar = vlor * 0.12
+        }
+        if (parce == 30){
+            vlorpar = vlor * 0.15
+        }
+        if (parce == 36){
+            vlorpar = vlor * 0.18
+        }
+        if (parce == 42){
+            vlorpar = vlor * 0.21
+        }
+        if (parce == 48){
+            vlorpar = vlor * 0.24
+        }
+        if (parce == 54){
+            vlorpar = vlor * 0.27
+        }
+        if (parce == 60){
+            vlorpar = vlor * 0.30
+        }
+        vlorTotal = vlor + vlorpar - desc
+
+alert(`O Preço final do carro adquirido foi: ${vlorTotal} \nA quantidade de parcelas é: ${parce}`)
+
+}
+function exe13(){
+    let idade
+    let peso 
+    let cont = 1
+    let soma1_10 = 0; let soma11_20 = 0; let soma21_30 = 0; let soma31acima = 0;
+    let media1 = 0; let media2 = 0; let media3 = 0; let media4 = 0;
+
+    while(cont<=15){
+        idade = Number(prompt(`Informe a idade ${cont}: `))
+        peso = Number(prompt(`Informe o peso: ${cont} `))
+
+        if ((idade>=1) && (idade <=10)){
+            soma1_10++
+            media1 = media1 + peso
+        }
+        if ((idade>=11) && (idade <=20)){
+            soma11_20++
+            media2 = media2 + peso
+        }
+
+        if ((idade>=21) && (idade <=30)){
+            soma21_30++
+            media3 = media3 + peso
+        }
+
+        if (idade>31){
+            soma31acima++
+            media4 = media4 + peso
+        }
+
+      cont++  
+    }
+    alert(`A media de peso das pessoas com idade 1 ate 10 anos é: ${media1/soma1_10}\nA media de peso das pessoas com idade 11 ate 20 anos é: ${media2/soma11_20}\nA media de peso das pessoas com idade 21 ate 30 anos é: ${media3/soma21_30}\nA media de peso das pessoas com idade 31 anos ou mais é: ${media4/soma31acima}`)
+
+}
+function exe14(){
+    let opniao
+    let idade 
+    let cont = 1
+    let media_idade = 0
+    let quant_reg = 0
+    let porc_bom = 0
+    let quant_otimo = 0
+    let quant_bom = 0
+
+    while(cont<=15){
+        idade = Number(prompt(`Digite a idade do espectador ${cont}: `))
+        opniao = Number(prompt(`Digite a opinião do espectador ${cont}, sendo que: \n1-Regular \n2-Bom \n3-Ótimo`))
+        switch(opniao){
+            case 1: quant_reg++; break
+            case 2: quant_bom++; break
+            case 3: quant_otimo++; break
+            default: alert(`Opnião digitada é inválida`)
+        }
+        if ((idade>0) && (opniao == 3)){
+            media_idade = media_idade + idade
+        }
+        if ((idade>0) && (opniao == 2)){
+            porc_bom = quant_bom / 15 * 100
+        }
+
+        cont++
+    }
+    alert(`A Média das idades das pessoas que responderam ótimo é: ${media_idade/quant_otimo.toFixed(2)} \nA quantidade de pessoas que responderam regular é: ${quant_reg}\nA porcentagem das pessoas que respoderam bom: ${porc_bom.toFixed(2)} %`)
+}
+function exe16(){
+    let idade 
+    let media = 0
+    let cont = 0
+
+    do{
+        idade = Number(prompt(`Escolha uma das opções abaixo: \nDigite sua idade: \nDigite 0 para sair. `))
+
+        if (idade > 0){
+            cont++
+            media = media + idade
+        }
+    }
+    while(idade!=0)
+    alert(`A média da idade de todas pessoas é: ${media/cont.toFixed(2)} `)
+
+}
+function exe17(){
+    let canal 
+    let soma4 = 0; let soma5= 0; let soma7 = 0; let soma12 = 0; 
+    let porc4 = 0; let porc5= 0; let porc7 = 0; let porc12 = 0
+    let somatotal = 0
+
+    do{
+        canal = Number(prompt(`Digite o numero do canal de TV:\n4-Canal 4\n5-Canal 5\n7-Canal 7\n12-Canal 12\n0-Canal 0 para sair.`))
+        switch(canal){
+            case 4: soma4++; break
+            case 5: soma5++; break
+            case 7: soma7++; break
+            case 12: soma12++; break
+            case 0: alert(`A pesquisa de audiência sera encerrada`); break
+            default: alert(`Opção de canal é inválida`)
+        }
+        somatotal = soma4 + soma5 + soma7 + soma12
+        if(canal == 4){
+            porc4 = soma4 / somatotal * 100
+        }
+        if(canal == 5){
+            porc5 = soma5 / somatotal * 100
+        }
+        if(canal == 7){
+            porc7 = soma7 / somatotal * 100
+        }
+        if(canal == 12){
+            porc12 = soma12 / somatotal * 100
+        }
+
+    }
+    while(canal!=0)
+    alert(`A porcentagem de audiência do canal 4 é: ${porc4.toFixed(2)} % \nA porcentagem de audiência do canal 5 é: ${porc5.toFixed(2)} % \nA porcentagem de audiência do canal 7 é: ${porc7.toFixed(2)} % \nA porcentagem de audiência do canal 12 é: ${porc12.toFixed(2)} %`)
+
+}
+function exe18(){
+    let idade 
+    let sexo 
+    let cont = 0
+    let sal
+    let media_sal = 0
+    let maioridade = 0
+    let menoridade = 0
+    let cont_mul200 = 0
+    let idade_menor_sal = 0
+    let sexo_menor_sal
+
+    do{
+        idade = Number(prompt(`Digite a idade da pessoa pesquisada: \n\n\n\n\nDigite numero negativo para sair.`))
+        sal = Number(prompt(`Digite o salário da pessoa pesquisada: `))
+        sexo = prompt(`Digite o genêro da pessoa pesquisada: \nM-Masculino \nF-Feminino`).toUpperCase()
+        switch(sexo){
+            case 'M': sexo_menor_sal = sexo; break
+            case 'F': sexo_menor_sal = sexo; break
+            default: alert(`O Genêro digitado é inválido!`)
+        }
+        if (sal>0){
+            cont++
+            media_sal = media_sal + sal
+        }
+        if (idade>0){
+            maioridade = maioridade + idade
+        }
+        else{
+            menoridade = menoridade + idade
+        }
+        if ((sal>0) && (sal<=200)){
+            cont_mul200++
+        }
+        if ((idade>0) && (sexo == 'M') && (sal>0)){
+            idade_menor_sal = idade_menor_sal + idade
+        }
+        else{
+            idade_menor_sal = idade_menor_sal + idade
+        }
+        if ((idade>0) && (sexo == 'M') && (sal>0)){
+            sexo_menor_sal = sexo_menor_sal + sexo
+        }
+        else{
+            sexo_menor_sal = sexo_menor_sal + sexo
+
+        }
+        if ((idade>0) && (sexo == 'F') && (sal>0)){
+            idade_menor_sal = idade_menor_sal + idade
+        }
+        else{
+            idade_menor_sal = sexo_menor_sal + sexo
+
+        }
+        if ((idade>0) && (sexo == 'F') && (sal>0)){
+            sexo_menor_sal = sexo_menor_sal + sexo
+        }
+        else{
+            sexo_menor_sal = sexo_menor_sal + sexo
 
 
-    
+        }
+
+    }
+    while(idade!=0)
+    alert(`A média dos salários do grupo é: ${media_sal / cont.toFixed(2)} \nA maior idade do grupo é: ${maioridade} \nA menor idade do grupo é: ${menoridade} \nA quantidade de mulheres com salário ate R$ 200,00: ${cont_mul200} \n A idade ${idade_menor_sal} é a menor e o genero é ${sexo_menor_sal} tem a menor salário`)
+
+}

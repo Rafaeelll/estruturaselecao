@@ -313,3 +313,18 @@ function exe11(){
 
 
 }
+function estatistica(){
+    // entrada de dados
+    let n = Number(document.getElementById('n').value)
+    let k = Number(document.getElementById('k').value)
+    let p = Number(document.getElementById('p').value)
+    let q = Number(document.getElementById('q').value)
+    let exp = n - k
+    
+    // calcula valor base
+    let calculo = (n * p ** k * q ** exp) * 100
+    // mostra o resultado
+    document.getElementById("resultado").innerHTML = `${calculo.toFixed(2)}`
+        
+
+}
