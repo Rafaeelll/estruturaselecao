@@ -531,23 +531,15 @@ function exe2obj(){
         vetor[i] = objeto
     }
         let soma = 0
-        let cont = 0
-        let mediasal = 0
     for(let i=0;i<4;i++){
         if (vetor[i].sal > 0){
             soma = soma + vetor[i].sal
-            cont = cont++
-            mediasal = soma/cont
         }
     }
         let soma_filho = 0
-        let cont_filho = 0
-        let mediafilho = 0
     for(let i=0;i<4;i++){
         if(vetor[i].filho > 0){
             soma_filho = soma_filho + vetor[i].filho
-            cont_filho = cont_filho++
-            mediafilho = soma_filho/cont_filho
         }
     }
     let maiorsal = 0
@@ -556,15 +548,114 @@ function exe2obj(){
             maiorsal = vetor[i].sal
         }
     }
-        let percF1000 = 0
-        let cont1000 = 0
+    let cont1000 = 0
+    let soma_m = 0
     for(let i=0;i<4;i++){
+        switch(vetor[i].genero){
+            case 'F': soma_m++; break
+            case 'M': vetor[i].genero; break
+            default: alert(`Opção inválida`)
+        }
         if((vetor[i].sal > 1000) && (vetor[i].genero == "F")){
-            cont1000 = cont1000++
-            percF1000 = (cont1000 / 4) * 100
-
+            cont1000 = soma_m
         }
     }
-    alert(`A média salarial dos habitantes é: ${mediasal}\nA média de filhos dos habitantes é: ${mediafilho}\nA maior salário de entre todos os habitantes é: ${maiorsal}\nPercentual de mulheres com salario > R$1000,00 reias: ${percF1000} `)
+    alert(`A média salarial dos habitantes é: ${soma/4}\nA média de filhos dos habitantes é: ${soma_filho/4}\nA maior salário de entre todos os habitantes é: ${maiorsal}\nPercentual de mulheres com salario > R$1000,00 reias: ${cont1000 / 4 * 100}%`)
 
+}
+function exe3obj(){
+    let vetor = new Array(4)
+    for(let i=0;i<4;i++){
+        let objeto = {
+            genero: prompt(`Informe o genêro do ${i+1}° habitante:\nM-Masculino\nF-Feminino`).toUpperCase(),
+            alt: Number(prompt(`Informe a altura do ${i+1}° habitante:`)),
+            idade: Number(prompt(`Informe a idade do ${i+1}° habitante:`)),
+            eyecolor: prompt(`Informe a cor dos olhos do ${i+1}° habitante:\nA-Azul\nC-Castanho\nV-Verde`)
+
+        }
+        vetor[i] = objeto
+    }
+    let soma_cast = 0
+    let cont_c = 0
+    for(i=0;i<4;i++){
+        switch(vetor[i].eyecolor){
+            case 'A': vetor[i].eyecolor; break
+            case 'C': vetor[i].eyecolor; break
+            case 'V': vetor[i].eyecolor; break
+            default: alert(`Opção inválida`)
+        }
+        if((vetor[i].idade > 0)&&(vetor[i].eyecolor == 'C')&&(vetor[i].alt > 1.60)){
+            cont_c++
+            soma_cast = soma_cast + vetor[i].idade
+        }
+    }
+    let contv = 0
+    let soma_m = 0
+    for(i=0;i<4;i++){    
+        switch(vetor[i].genero){
+            case 'F': vetor[i].genero; break
+            case 'M': soma_m++; break
+            default: alert(`Opção inválida`)
+        }
+        if((vetor[i].genero == 'F')&&(vetor[i].idade > 20)&&(vetor[i].idade <= 45)&&(vetor[i].eyecolor == 'V')&&(vetor[i].alt < 1.70)){
+            contv++
+        }
+    }
+    let contm = 0
+    for(i=0;i<4;i++){  
+        if(vetor[i].genero == 'M'){
+            contm = soma_m
+        }
+    }
+    let maior = 0
+    for(let i=0;i<4;i++){
+        if (vetor[i].idade > maior){
+            maior = vetor[i].idade
+        }
+    }
+    alert(`Média de idade das pessoas com olhos castanhos e altura > 1.60 m = ${soma_cast/cont_c}\nMaior idade entre os habitantes = ${maior}
+    \nQuantidade de indivídous com do sexo feminino com idade de 20 ate 45 e olhos verdes e altura < 1.70 m = ${contv}\nPorcentagem de homens = ${contm /4 * 100}% `)
+}
+function exe4obj(){
+    let vetor = new Array (4)
+
+    for(let i=0; i<4; i++){
+        objeto = {
+            idade: Number(prompt(`Informe a idade do ${i+1}° habitante:`)),
+            genero: prompt(`Informe o genêro do ${i+1}° habitante:\nM-Masculino\nF-Feminino`).toUpperCase(),
+            renda_fam: Number(prompt(`Informe a renda familiar do ${i+1}° habitante:`)),
+            children: Number(prompt(`Informe a quantidade de filho(s) ${i+1}° habitante`))
+        }
+        vetor[i] = objeto
+    }
+    soma_sal = 0
+
+    for(let i=0;i<4;i++){
+        if(vetor[i].renda_fam > 0)
+        soma_sal = soma_sal + vetor[i].renda_fam
+
+    }
+    let maior = 0
+    let menor = 10000
+    for(let i=0; i<4; i++){
+        if (vetor[i].idade > maior){
+            maior = vetor[i].idade
+        }
+        if (vetor[i].idade < menor){
+            menor = vetor[i].idade
+        }
+    }
+    cont_m = 0
+    for(let i=0;i<4;i++){
+        switch(vetor[i].genero){
+            case 'F': vetor[i].genero; break
+            case 'M': vetor[i].genero; break
+        
+        }
+       if((vetor[i].children>2)&&(vetor[i].renda_fam<600)&&(vetor[i].genero == 'F')){
+           cont_m++
+       }
+    }
+    alert(`A média de salario entre os habitantes = ${soma_sal/4}\nA menor idade do grupo é ${menor}, e a maior é ${maior}
+    \nMulheres com + de dois filhos e com renda < R$600,00 = ${cont_m}`)
 }
