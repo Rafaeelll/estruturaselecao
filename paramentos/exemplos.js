@@ -37,7 +37,7 @@ function cadastravendas(vetVendedores, vetVendas){
     else {
         let achou = false
         for(let i=0;i<vetVendas.length;i++){
-            if ((vetVendas[i].vendedor == objeto.vendedor) && (vetVendas[i].mes == objeto2.mes)){
+            if ((vetVendas[i].vendedor == objeto.vendedor) && (vetVendas[i].mes == objeto.mes)){
                 achou = true
             }
         }
@@ -345,6 +345,27 @@ function exe8obj(){
 
     }
     while(opcao != 2)
+
+}
+function substituir(vetorA, negativo){
+    for(let i=0;i<4;i++){
+        let objeto = {
+            number: Number(prompt(`Informe um número inteiro qualquer:`))
+
+        }
+        vetorA[i]= objeto
+    }
+    for(let i=0;i<4;i++){
+        if(vetorA[i].number < 0){
+            negativo.push(vetorA[i])
+        }
+    }
+    alert(`Os números negativos informados foram ${negativo}`)
+}
+function exe4obj(){
+    let negativo = []
+    let vetorA = new Array(4)
+    substituir(vetorA, negativo)
 
 }
 

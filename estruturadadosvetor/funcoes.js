@@ -309,5 +309,113 @@ function exe10(){
     alert(`O Valor resultante do primeiro vetor foi de ${resultante1}\nO Resultante do vetor 2 foi de: ${resultante2.length}`)
 
 }   
+function exe11(){
+    let vetor1 = new Array(10)
+    let par = []
+    let imp = []
 
+    for(let i=0;i<10;i++){
+        vetor1[i] = Number(prompt(`Digite o número ${i+1}:`))
+    }
+    for(let i=0;i<10;i++){
+        if(vetor1[i] % 2 == 0){
+            par.push(vetor1[i])
+        }
+        else{
+            imp.push(vetor1[i])
+        }
+    }
+    alert(`O resultante do primeiro vetor é ${par}.\nO resultante do segundo vetor é ${imp}.`)
+}
+function exe13(){
+    let vetornome = new Array(8)
+    let vetornota = new Array(8)
+    for(let i=0;i<4;i++){
+        vetornome[i] = prompt(`Digite o nome do aluno(a) ${i+1}:`)
+        vetornota[i] = Number(prompt(`Digite a nota do alunol(a) ${i+1}:`))
+    }
+    let soma = 0
+    for(let i=0;i<8;i++){
+        if(vetornota[i] > 0){
+            soma = soma + vetornota[i]
+            alert(`Relatorio de notas:\n${vetornome[i]} = ${vetornota[i]}`)
+        }
+    }
+    alert(`A media da classe = ${soma/4}`)
+}
+function exe14(){
+    vetornota1 = new Array(6)
+    vetornota2 = new Array(6)
+    vetoraluno = new Array (6)
 
+    for(let i=0;i<6;i++){
+        vetoraluno[i] = String(prompt(`Informe o nome do aluno ${i+1}:`))
+        vetornota1[i] = Number(prompt(`Informe a nota 1 do aluno ${i+1}:`))
+        vetornota2[i] = Number(prompt(`Informe a nota 2 do aluno ${i+1}:`))
+    }
+    let soma_nota = 0
+    let media_aluno = 0
+    let cont_aprovado = 0
+    let cont_reprovado = 0
+    let porc_aprovado = 0
+    let porc_reprovado = 0
+    let media_classe = 0
+    let somatotal = 0
+    let somamedia = 0
+    
+    for(let i=0;i<6;i++){
+        if((vetornota1[i]>0) && (vetornota2[i]>0)){
+            soma_nota = vetornota1[i] + vetornota2[i]
+            media_aluno = soma_nota/2
+            alert(`O aluno ${vetoraluno[i]} teve uma média de ${media_aluno}`)
+
+        }
+        if(media_aluno >=6){
+            cont_aprovado++
+            porc_aprovado = cont_aprovado / 6 * 100
+            alert(`O aluno ${vetoraluno[i]} Teve media >=6 e esta aprovado`)
+
+        }
+        else{
+            cont_reprovado++
+            porc_reprovado = cont_reprovado / 6 * 100
+            alert(`O aluno ${vetoraluno[i]} Teve media <6 e esta reprovado`)
+        }
+    }
+    for(let i=0;i<6;i++){
+        if((vetornota1[i]>0) && (vetornota2[i]>0)){
+            somamedia = vetornota1[i] + vetornota2[i]
+            somatotal = somamedia/2
+            media_classe = media_classe + somatotal / 6
+        }
+
+    }
+    alert(`A media de nota da classe é = ${media_classe.toFixed(2)}\nA porcentagem de alunos reprovados é = ${porc_reprovado.toFixed(2)}%\nA porcentagem de alunos aprovados é = ${porc_aprovado.toFixed(2)}%`)
+}
+function exe16(){
+    vetorprod =new Array(5)
+    vetorpreco = new Array(5)
+
+    for(let i=0;i<5;i++){
+        vetorprod[i] = String(prompt(`Digite o nome do produto ${i+1}:`))
+        vetorpreco[i] = Number(prompt(`Digite o valor do produto ${i+1}: `))
+
+    }
+    let cont50 = 0
+    let soma100 = 0
+    let media100 = 0
+    for(let i=0;i<5;i++){
+        if((vetorpreco[i] > 0)&&(vetorpreco[i] < 50)){
+            cont50++
+        }
+        if((vetorpreco[i] >= 50)&&(vetorpreco[i] < 100)){
+            alert(`Os produtos ${vetorprod[i]} tem preços entre R$50,00 e R$100,00 `)
+        }
+        if(vetorpreco[i]>100){
+            soma100++
+            media100 = media100 + vetorpreco[i] / soma100
+        }
+    }
+    alert(`A quantidade de produtos que tem valor inferior é = ${cont50}\n A media de preço dos produtos num valor acima de R$100,00 é = ${media100}`)
+
+}

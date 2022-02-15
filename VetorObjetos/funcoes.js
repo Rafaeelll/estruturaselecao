@@ -618,7 +618,6 @@ function exe3obj(){
 }
 function exe4obj(){
     let vetor = new Array (4)
-
     for(let i=0; i<4; i++){
         objeto = {
             idade: Number(prompt(`Informe a idade do ${i+1}° habitante:`)),
@@ -629,11 +628,9 @@ function exe4obj(){
         vetor[i] = objeto
     }
     soma_sal = 0
-
     for(let i=0;i<4;i++){
         if(vetor[i].renda_fam > 0)
         soma_sal = soma_sal + vetor[i].renda_fam
-
     }
     let maior = 0
     let menor = 10000
