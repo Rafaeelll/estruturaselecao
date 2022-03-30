@@ -656,3 +656,43 @@ function exe4obj(){
     alert(`A média de salario entre os habitantes = ${soma_sal/4}\nA menor idade do grupo é ${menor}, e a maior é ${maior}
     \nMulheres com + de dois filhos e com renda < R$600,00 = ${cont_m}`)
 }
+function exe6obj(){
+    let vetcadastro = []
+    let opcao
+
+   
+    do{
+        opcao = Number(prompt(`Digite uma das opções abaixo: \n1. Cadastrar-se. \n2. Mostrar cadastros. \n3. Sair.`))
+        switch(opcao){
+            case 1: 
+            for(let i=0;i<vetcadastro.length;i++){
+                    let objeto1 = {
+                        num_client: Number(prompt(`Infome o número do cliente`)),
+                        nome: String (prompt(`Informe o nome do cliente:`)),
+                        telefone: Number (prompt(`Informe o telefone do cliente:`)),
+                        endereco: String(prompt(`Informe o endereço do cliente`))
+                        
+                    }
+                    if(vetcadastro[i].num_client  == objeto1.num_client){
+                        achou1 = true
+                    }
+                }
+                if(achou1){
+                    alert(`Digite outro número. Esse número já esta cadastrado!`)
+
+                }
+                else {
+                    let objeto2 = {
+                        num_cont: Number(prompt(`Informe o número da conta`))
+                        
+                    }
+                    
+                    vetcadastro.push(objeto1)
+                    alert(`Vendedor cadastrado com sucesso.`)
+                }
+                    
+
+            }
+        }
+    while(opcao!=3)
+}
