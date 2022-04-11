@@ -1,4 +1,3 @@
-
 function cadastraralunos(vetalunos){
     let objeto = {
         nome: prompt(`Informe o nome do aluno(a)`).toUpperCase(),
