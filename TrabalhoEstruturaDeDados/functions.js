@@ -52,6 +52,7 @@ function relatorio(vetalunos, fnComp){
         }
     }
     alert(`Lista de alunos:\n ${JSON.stringify(vetalunos,null,4)}`)
+    alert("Ver Relatório completo no console, pressione Ctrl+Shift+I")
 
 }
 
