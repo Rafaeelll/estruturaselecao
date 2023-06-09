@@ -23,14 +23,13 @@ function cadastraralunos(vetalunos){
         }
     }
     if (achou) {
-        console.log(`Já existe um aluno com este RA`)
+        alert(`Já existe um aluno com este RA`)
     }
     else {
         vetalunos.push(objeto) // adiciona o aluno no vetor
-        console.log(`Aluno cadastrado com sucesso`)
+        alert(`Aluno cadastrado com sucesso`)
+        console.log(objeto)
     }
-    console.log(objeto);
-
 }
 
 function relatorio(vetalunos, fnComp){
@@ -52,8 +51,8 @@ function relatorio(vetalunos, fnComp){
            [vetalunos[posSel], vetalunos[posMenor] ] = [ vetalunos[posMenor], vetalunos[posSel]]
         }
     }
-    console.log(`Lista de alunos:\n ${JSON.stringify(vetalunos,null,4)}`)
-    console.log("Ver Relatório completo no console, pressione Ctrl+Shift+I")
+    alert(`Lista de alunos:\n ${JSON.stringify(vetalunos,null,4)}`)
+    alert("Ver Relatório completo no console, pressione Ctrl+Shift+I")
 
 }
 
