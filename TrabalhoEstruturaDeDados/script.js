@@ -3,19 +3,43 @@ const readline = require('readline');
 let vetor = [];
 let vetorAprovados = [];
 
-function cadastraralunos(vetalunos, nome, ra, idade, sexo, media) {
+function cadastraralunos(vetalunos, nome, ra, idade, genero, media) {
   let objeto = {
     nome: nome.toUpperCase(),
     ra: Number(ra),
     idade: Number(idade),
-    sexo: sexo.toUpperCase(),
+    genero: genero.toUpperCase(),
     media: Number(media)
   };
 
-  if (objeto.media >= 6) {
+  /////////// Validações de dados //////////////
+
+  if (objeto.media >= 6 && objeto.media <= 10) {
     objeto.resultado = "Aprovado";
-  } else {
+  } else if (objeto.media >= 0 && objeto.media < 6) {
     objeto.resultado = "Reprovado";
+  }
+  else{
+    console.log("Por favor, informar nota de 0 a 10.")
+    return;
+  }
+  if (objeto.genero !== "M" && objeto.genero !== "F") {
+    console.log("Por favor, informar um gênero válido (M para masculino, F para feminino).");
+    return;
+  }
+  if (String(objeto.nome).length <= 1){
+    console.log("Por favor, informar nome com mais de 2 caracteres")
+    return;
+  }
+
+  if (objeto.idade <= 0) {
+    console.log("Por favor, informar idade acima de 0");
+    return;
+  }
+
+  if (String(objeto.ra).length !== 13) {
+    console.log("Por favor, informar um RA válido com 13 dígitos.");
+    return;
   }
 
   if (objeto.resultado == "Aprovado") {
@@ -38,6 +62,7 @@ function cadastraralunos(vetalunos, nome, ra, idade, sexo, media) {
 
 }
 
+///////////////////// Ordenar os dados //////////////////////////
 function relatorio(vetalunos, fnComp) {
   for (let posSel = 0; posSel < vetalunos.length - 1; posSel++) {
     let posMenor = posSel + 1;
@@ -58,6 +83,7 @@ function relatorio(vetalunos, fnComp) {
 
 }
 
+///////////// Menu de opções //////////////////////
 async function tela() {
     const rl = readline.createInterface({
       input: process.stdin,
@@ -97,7 +123,7 @@ async function tela() {
               )
             )
           );
-          const sexo = await new Promise((resolve) =>
+          const genero = await new Promise((resolve) =>
             rl.question(
               "Informe o gênero do aluno(a), M-Masculino ou F-Feminino: ",
               (input) => resolve(input)
@@ -111,7 +137,7 @@ async function tela() {
             )
           );
   
-          cadastraralunos(vetor, nome, ra, idade, sexo, media);
+          cadastraralunos(vetor, nome, ra, idade, genero, media);
           console.log(vetor);
           break;
   
